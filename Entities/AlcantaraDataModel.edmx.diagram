@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1de3f575ea344533ad82be765424f0f8" Name="Diagram1">
+        <EntityTypeShape EntityType="AlcantaraDbModel.Basket" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcantaraDbModel.CategoryReference" Width="1.5" PointX="5.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcantaraDbModel.Employee" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcantaraDbModel.Firm" Width="1.5" PointX="5.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcantaraDbModel.Furniture" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcantaraDbModel.Order" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcantaraDbModel.Review" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcantaraDbModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlcantaraDbModel.User" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="AlcantaraDbModel.FK_Basket_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="AlcantaraDbModel.FK_Furniture_CategoryReference" ManuallyRouted="false" />
+        <AssociationConnector Association="AlcantaraDbModel.FK_Order_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="AlcantaraDbModel.FK_Furniture_Firm" ManuallyRouted="false" />
+        <AssociationConnector Association="AlcantaraDbModel.FK_Order_User" ManuallyRouted="false" />
+        <AssociationConnector Association="AlcantaraDbModel.FK_Reviews_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

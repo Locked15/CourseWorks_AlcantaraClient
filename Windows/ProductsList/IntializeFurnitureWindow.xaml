@@ -1,0 +1,62 @@
+﻿<Window x:Class="AlcantaraClient.Windows.ProductsList.IntializeFurnitureWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlcantaraClient.Windows.ProductsList"
+        mc:Ignorable="d"
+        Title="Запрос на добавление мебели — Алькантара" 
+        Height="350" Width="400"
+        MinHeight="345" MinWidth="395"
+        Loaded="Window_Loaded">
+
+    <Grid Margin="2.5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Алькантара" FontSize="40"/>
+
+        <!-- #region Настройка мебели. -->
+        
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="Название:" TextAlignment="Left" FontSize="20"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=Name}" TextAlignment="Right" FontSize="20"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Стоимость:" TextAlignment="Left" FontSize="20"/>
+        <TextBox Name="FurnitureCost" Grid.Row="3" Grid.Column="2" Text="{Binding Path=Cost, StringFormat='0.00'}" TextAlignment="Right" FontSize="20"
+                 TextChanged="FurnitureCost_TextChanged"/>
+        
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="Категория:" TextAlignment="Left" FontSize="20"/>
+        <ComboBox Name="FurnitureCategory" Grid.Row="4" Grid.Column="2" Margin="2.5" DisplayMemberPath="Name"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"
+                  SelectedItem="{Binding Path=CategoryReference}"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="1" Text="Компания:" TextAlignment="Left" FontSize="20"/>
+        <ComboBox Name="FurnitureCompany" Grid.Row="5" Grid.Column="2" Margin="2.5" DisplayMemberPath="Name"
+                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"
+                  SelectedItem="{Binding Path=Firm}"/>
+        <!-- #endregion -->
+        
+        <Button Name="SaveFurniture" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Content="Сохранить" Click="SaveFurniture_Click"
+                FontSize="26"/>
+        <Button Name="RemoveFurniture" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Content="Удалить" Click="RemoveFurniture_Click"
+                FontSize="26"/>
+    </Grid>
+</Window>

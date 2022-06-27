@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="AlcantaraClient.UserControls.FurnitureListItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AlcantaraClient.UserControls"
+             mc:Ignorable="d" 
+             Height="150" Width="800"
+             Background="White"
+             Loaded="UserControl_Loaded">
+
+    <UserControl.ContextMenu>
+        <ContextMenu>
+            <MenuItem Name="ContextMenu_AddToOrder" Header="Добавить к заказу" FontFamily="Georgia" Click="ContextMenu_AddToOrder_Click"/>
+            
+            <MenuItem Name="ContextMenu_RemoveFromOrder" Header="Удалить из заказа" FontFamily="Georgia" Click="ContextMenu_RemoveFromOrder_Click"/>
+        </ContextMenu>
+    </UserControl.ContextMenu>
+    
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="320*"/>
+            <ColumnDefinition Width="130*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" BorderBrush="Black" BorderThickness="1.5"/>
+        <Image Name="FurnitureImage" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Margin="5"/>
+        
+        <!-- #region Верхняя строка. -->
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Name}" FontSize="20"/>
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="ОТ" FontSize="20"/>
+        <TextBlock Grid.Row="0" Grid.Column="3" Text="{Binding Path=Firm.Name}" FontSize="20" TextAlignment="Left"/>
+        
+        <TextBlock Grid.Row="0" Grid.Column="4" Text="{Binding Path=Cost, StringFormat='0.00'}" FontSize="20"/>
+        <!-- #endregion -->
+        
+        <!-- #region Средняя строка. -->
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Категория:" FontSize="20"/>
+        <TextBlock Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Text="{Binding Path=CategoryReference.Name}" FontSize="20"
+                   TextAlignment="Left"/>
+        <!-- #endregion -->
+        
+        <!-- #region Нижняя строка. -->
+        
+        <TextBlock Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="Оценка:" FontSize="20"/>
+        <TextBlock Grid.Row="2" Grid.Column="3" Text="{Binding Path=SummaryReviewsGrade}" FontSize="20" TextAlignment="Left"/>
+        <!-- #endregion -->
+    </Grid>
+</UserControl>
